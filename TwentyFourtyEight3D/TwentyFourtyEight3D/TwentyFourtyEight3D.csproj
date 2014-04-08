@@ -133,12 +133,6 @@
     <Content Include="..\..\lib\seen.min.js">
       <Link>Html\lib\seen.min.js</Link>
     </Content>
-    <Content Include="..\..\lib\fonts\fonts.css">
-      <Link>Html\lib\fonts\fonts.css</Link>
-    </Content>
-    <Content Include="..\..\lib\fonts\roboto.woff">
-      <Link>Html\lib\fonts\roboto.woff</Link>
-    </Content>
     <Content Include="..\..\lib\2048\animframe_polyfill.js">
       <Link>Html\lib\2048\animframe_polyfill.js</Link>
     </Content>
