@@ -3,10 +3,16 @@
   <title>2048 | seen.js</title>
   <link href="lib/fonts/fonts.css" rel="stylesheet" type="text/css"/>
   <link href="css/theme.css" rel="stylesheet" type="text/css"/>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="900">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="format-detection" content="telephone=no" />
   <script src="lib/seen.min.js"></script>
   <script src="lib/coffee-script.min.js"></script>
 </head>
-<body>
+<body style="margin: 0px">
   <div class="page">
   <style>
     .bar-2048 {
@@ -14,6 +20,7 @@
       background-color : #bbada0;
       font-size        : 14px;
       color            : #eee4da;
+      margin           : 0px;
     }
 
     .message {
