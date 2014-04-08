@@ -1,41 +1,13 @@
 <html>
 <head>
   <title>2048 | seen.js</title>
-  
   <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
-  
   <link href="css/theme.css" rel="stylesheet" type="text/css"/>
-  
-  
   <script src="lib/seen.min.js"></script>
-  
   <script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.7.1/coffee-script.min.js"></script>
-  
 </head>
 <body>
   <div class="page">
-    <h1>2048</h1>
-    <h4></h4>
-
-        <div class="nav-bar">
-      <div class="nav-button-wrapper" style="text-align : left;">
-        
-          <a href="demo-gravity.html"><div class="nav-button">
-          <div class="label">prev</div><div class="title">N-Body Gravity Simulation</div>
-          </div></a>
-        
-      </div>
-      <div class="nav-button-wrapper" style="text-align : center;">
-          <a href="index.html"><div class="nav-button">
-          <div class="label">up</div><div class="title">to index</div>
-          </div></a>
-      </div>
-      <div class="nav-button-wrapper" style="text-align : right;">
-        
-      </div>
-    </div>
-
-    
   <style>
     .bar-2048 {
       text-align       : center;
@@ -106,18 +78,9 @@
     <div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div><div class="color-sample"></div>
   </div>
 
-  <div class="bar-2048" style="padding-bottom: 10px;">
-    Implemented using <a href="https://github.com/gabrielecirulli">Gabriele Cirulli's</a> 2048.
-  </div>
+  <div class="caption"></div>
 
 
-
-    <div class="caption">
-    
-    
-    </div>
-
-    
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.legacy.js"></script>
 
@@ -255,7 +218,7 @@
     frame : ->
       @_place(@shape0, @tile.mergedFrom[0].previousPosition, @tile, @t)
       @_place(@shape1, @tile.mergedFrom[1].previousPosition, @tile, @t)
-      
+
     lastFrame : ->
       @_place(@shape, @tile)
       @model.remove(@shape0, @shape1)
@@ -295,7 +258,7 @@
       transitions = transitions.filter (transition) -> transition.update()
       if transitions.length then @queue.unshift(transitions)
 
-  SCALE = 400 / SIZE 
+  SCALE = 400 / SIZE
 
   # This is our implementation of the HTMLActuator interface from the original
   # 2048 library by https://github.com/gabrielecirulli.
@@ -376,7 +339,7 @@
 
       nextGrid = @_emptyGridState()
 
-      for column in grid.cells  
+      for column in grid.cells
         for tile in column
           continue unless tile?
 
@@ -422,21 +385,8 @@
   # Initialize the 2048 game manager
   window.requestAnimationFrame () ->
     new GameManager(SIZE, KeyboardInputManager, SeenActuator, LocalStorageManager)
-  
-</script>
 
-
-    
-    <link href="http://yandex.st/highlightjs/8.0/styles/monokai_sublime.min.css" rel="stylesheet" type="text/css"/>
-<script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
-<pre><code id="code-view"></code></pre>
-<script type="text/javascript">
-  var view = document.getElementById('code-view');
-  var code = document.getElementById('code');
-  view.innerHTML = code.innerHTML;
-  hljs.highlightBlock(view);
 </script>
-    
   </div>
 </body>
 </html>
