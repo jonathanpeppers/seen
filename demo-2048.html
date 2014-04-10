@@ -341,6 +341,7 @@ canvas.height = MY_HEIGHT;
       $('.retry-button').hide()
       $('.keep-playing-button').hide()
       $('.restart-button').show()
+      window.location.href = 'restart://'
 
     # Invoked on user interaction / game state update
     actuate : (grid, metadata) ->

@@ -2,6 +2,7 @@ using System;
 using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ChartboostSDK;
 
 namespace TwentyFourtyEight3D
 {
@@ -15,6 +16,14 @@ namespace TwentyFourtyEight3D
         {
             base.ViewDidLoad();
 
+            _webView.ShouldStartLoad = (webView, request, type) =>
+            {
+                string url = request.Url.ToString();
+                bool isRestart = url.StartsWith("restart://");
+                if (isRestart)
+                    Chartboost.SharedChartboost.ShowInterstitial();
+                return !isRestart;
+            };
             _webView.LoadFinished += (sender, e) =>
             {
 
