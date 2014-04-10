@@ -35,5 +35,7 @@
 	<string>2048 in 3D</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.jonathanpeppers.20483D</string>
+	<key>UIStatusBarHidden</key>
+	<true/>
 </dict>
 </plist>
