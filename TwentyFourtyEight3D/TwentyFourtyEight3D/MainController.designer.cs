@@ -13,6 +13,9 @@ namespace TwentyFourtyEight3D
 	partial class MainController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIView _splash { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIWebView _webView { get; set; }
 		
 		void ReleaseDesignerOutlets ()
@@ -20,6 +23,11 @@ namespace TwentyFourtyEight3D
 			if (_webView != null) {
 				_webView.Dispose ();
 				_webView = null;
+			}
+
+			if (_splash != null) {
+				_splash.Dispose ();
+				_splash = null;
 			}
 		}
 	}
