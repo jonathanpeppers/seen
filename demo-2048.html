@@ -2,11 +2,7 @@
 <head>
   <title>2048 | seen.js</title>
   <link href="css/theme.css" rel="stylesheet" type="text/css"/>
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="900">
-  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="user-scalable=no, minimal-ui">
   <meta name="format-detection" content="telephone=no" />
   <script src="lib/seen.min.js"></script>
   <script src="lib/coffee-script.min.js"></script>
@@ -102,7 +98,13 @@
 <script src="lib/2048/tile.js"></script>
 <script src="lib/2048/local_storage_manager.js"></script>
 <script src="lib/2048/game_manager.js"></script>
-
+<script type="text/javascript">
+var MY_WIDTH = window.innerWidth;
+var MY_HEIGHT = window.innerHeight - 128;
+var canvas = document.getElementById('seen-canvas');
+canvas.width = MY_WIDTH;
+canvas.height = MY_HEIGHT;
+</script>
 <script type="text/coffeescript" id="code">
   # The size of the game. In this case, a 4-by-4 grid
   SIZE = 4
@@ -276,7 +278,7 @@
         fractionalPoints : true
         model            : new seen.Model().scale(SCALE).rotx(-0.5)
         camera           : new seen.Camera
-          viewport : seen.Viewports.center(900, 500)
+          viewport : seen.Viewports.center(MY_WIDTH, MY_HEIGHT)
 
       # Add some lights
       @scene.model.add seen.Lights.point
@@ -303,7 +305,7 @@
 
       # Create a context with a fill layer and the scene layer
       @context = seen.Context('seen-canvas')
-      @context.layer(new seen.FillLayer(900, 500, '#faf8ef'))
+      @context.layer(new seen.FillLayer(MY_WIDTH, MY_HEIGHT, '#faf8ef'))
       @context.sceneLayer(@scene)
 
       # Slowly rock the board back and forth, cuz why not? It is THREEEE-DEEEEE!!!

@@ -15,6 +15,10 @@ namespace TwentyFourtyEight3D
         {
             base.ViewDidLoad();
 
+            _webView.LoadFinished += (sender, e) =>
+            {
+
+            };
             _webView.LoadError += (sender, e) =>
             {
                 Console.WriteLine("Error: " + e.Error.LocalizedDescription);
